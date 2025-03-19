@@ -3,3 +3,6 @@
 yarn-debug.log*
 .yarn-integrity
 cypress/downloads/
+
+cypress.env.json
+cypress.env.*.json
