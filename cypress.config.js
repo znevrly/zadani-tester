@@ -10,7 +10,10 @@ module.exports = defineConfig({
     video: false,
     screenshotOnRunFailure: false,
     viewportWidth: 1280,
-    viewportHeight: 800
+    viewportHeight: 800,
+    chromeWebSecurity: false,
+    experimentalSessionAndOrigin: true,
+    isolation: true
   },
   // Allow running tests with different domains via CLI
   // Usage: npx cypress open --env domain=cz

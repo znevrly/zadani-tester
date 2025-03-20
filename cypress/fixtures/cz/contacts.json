@@ -1,16 +1,14 @@
 {
   "testContact": {
-    "name": "Test Company s.r.o.",
-    "company_number": "12345678",
-    "tax_number": "CZ12345678",
-    "phone": "+420123456789",
+    "companyNumber": "02005573",
+    "phone": "608460264",
     "email": "test@example.com",
-    "web": "www.testcompany.cz",
-    "address": {
-      "street": "Test Street 123",
-      "city": "Prague",
-      "postcode": "11000",
-      "country_code": "CZ"
-    }
-  }
+    "web": "www.testcompany.cz"
+  },
+  "anotherContact": {
+    "companyName": "IM Centrum",
+    "phone": "777888999",
+    "email": "info@supplier.cz",
+    "web": "www.supplier.cz"
+   }
 }

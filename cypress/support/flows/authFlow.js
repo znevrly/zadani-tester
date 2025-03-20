@@ -9,18 +9,21 @@ export class AuthFlow {
       const baseUrl = Cypress.config('domains')[this.domain].baseUrl;
       cy.visit(`${baseUrl}/prihlaseni`);
       
-      // First check for the "Přihlásit se do mého účtu" button
-      cy.get('button[data-analytics-id="signIn.v2.login"]')
-        .should('be.visible')
-        .should('exist')
-        .click();
+      // Check if the sign-in button exists and click it if present
+      cy.get('body').then($body => {
+        if ($body.find('button[data-analytics-id="signIn.v2.login"]').length > 0) {
+          cy.get('button[data-analytics-id="signIn.v2.login"]')
+            .should('be.visible')
+            .click();
+        }
+      });
       
       // Wait for the form to appear and fill it
       cy.get('input[name="email"]')
         .should('be.visible')
         .should('exist')
-        .type('tesla2051@seznam.cz');
-      cy.get('input[name="password"]').type('28ECZ');
+        .type(Cypress.env('roleUser1').email);
+      cy.get('input[name="password"]').type(Cypress.env('roleUser1').password);
       cy.get('button[data-analytics-id="button.login"]').click();
       
       return this;
